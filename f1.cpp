@@ -89,3 +89,11 @@ void fillFlightInfo(struct FlightInfo* flight, const char* destination, const ch
         free(flight->destination); // Freeing previously allocated memory
         return; // Exiting function without further action
     }
+    while (i < strlen(date) && i < 29)
+    {
+        flight->date[i] = date[i];
+        ++i;
+    }
+    // Add null terminator to date string
+    flight->date[i] = '\0';
+}
