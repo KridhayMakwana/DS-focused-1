@@ -58,3 +58,34 @@ void printFlightInfo(struct FlightInfo flights[], int size)
         printf("%-35s%-35s\n", flights[i].destination, flights[i].date);// Print each flight's destination and date
     }
 }
+// Function to fill flight information
+void fillFlightInfo(struct FlightInfo* flight, const char* destination, const char* date)
+// Initialize loop counter
+{
+
+    int i = 0;
+
+    flight->destination = (char*)malloc(sizeof(char) * (strlen(destination) + 1));
+
+    if (flight->destination == NULL)
+    {
+        printf("Error: Failed to allocate memory for destination.\n");
+        return; // Exiting function without further action
+    }
+    // Copy destination string to FlightInfo struct
+    while (i < strlen(destination) && i < 29)
+    {
+        flight->destination[i] = destination[i];
+        ++i;
+    }
+
+    flight->destination[i] = '\0';// Add null terminator to destination string
+    i = 0;
+    flight->date = (char*)malloc(sizeof(char) * (strlen(date) + 1));
+
+    if (flight->date == NULL)
+    {
+        printf("Error: Failed to allocate memory for date.\n");
+        free(flight->destination); // Freeing previously allocated memory
+        return; // Exiting function without further action
+    }
