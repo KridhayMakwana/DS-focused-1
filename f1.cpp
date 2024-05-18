@@ -17,3 +17,6 @@ struct FlightInfo {
     char* date;                   // Pointer to store the date string
     char* destination;            // Pointer to store the destination string
 };
+void fillFlightInfo(struct FlightInfo* flight, const char* destination, const char* date);
+// Function prototypes
+void printFlightInfo(struct FlightInfo flights[], int size);
