@@ -49,3 +49,12 @@ int main()                       // Main function
 
     return 0;
 }
+// Function to print flight information
+void printFlightInfo(struct FlightInfo flights[], int size)
+{
+    printf("Destination                         Date\n");// Print header for flight information
+    for (int i = 0; i < size; ++i)
+    {
+        printf("%-35s%-35s\n", flights[i].destination, flights[i].date);// Print each flight's destination and date
+    }
+}
