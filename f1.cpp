@@ -20,3 +20,7 @@ struct FlightInfo {
 void fillFlightInfo(struct FlightInfo* flight, const char* destination, const char* date);
 // Function prototypes
 void printFlightInfo(struct FlightInfo flights[], int size);
+int main()                       // Main function 
+{
+
+    printf("Enter flight information:\n");            // Prompt the user to enter flight information
